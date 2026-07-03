@@ -35,8 +35,4 @@
      ```bash
      npx serve
      ```
-   * **Using Python**:
-     ```bash
-     python -m http.server 8000
-     ```
 3. Open `http://localhost:8000` in your web browser.
