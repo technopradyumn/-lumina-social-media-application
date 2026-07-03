@@ -1,0 +1,297 @@
+/* ==========================================================================
+   Lumina CSS - Creator Analytics Page & Custom CSS Bar Charts
+   ========================================================================== */
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.col-span-2 {
+    grid-column: span 2;
+}
+
+.col-span-3 {
+    grid-column: span 4;
+}
+
+/* On desktop log list can span 3 columns */
+@media (min-width: 1025px) {
+    .col-span-3 {
+        grid-column: span 3;
+    }
+}
+
+.stat-card {
+    padding: 24px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-growth {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.stat-growth.green {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--active-green);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.stat-growth.pink {
+    background: rgba(236, 72, 153, 0.15);
+    color: var(--accent-pink);
+    border: 1px solid rgba(236, 72, 153, 0.25);
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.stat-footer {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.analytics-chart-card {
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chart-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+/* Custom CSS Bar Chart */
+.bar-chart-container {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    height: 220px;
+    align-items: stretch;
+}
+
+.chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: right;
+    padding-bottom: 24px;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 10px 10px 10px;
+    height: 100%;
+}
+
+.chart-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32px;
+    height: 100%;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.chart-bar-fill {
+    width: 100%;
+    background: linear-gradient(to top, var(--accent-primary), var(--accent-secondary));
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    cursor: pointer;
+    transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.chart-bar-fill:hover {
+    transform: scaleY(1.03);
+    filter: brightness(1.2);
+}
+
+.chart-bar-tooltip {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: var(--text-primary);
+    color: var(--bg-base);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 6px;
+    pointer-events: none;
+    transition: transform var(--transition-fast);
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.chart-bar-fill:hover .chart-bar-tooltip {
+    transform: translateX(-50%) scale(1);
+}
+
+.chart-bar-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-top: 8px;
+    position: absolute;
+    bottom: -22px;
+}
+
+/* Reach Distribution Meter */
+.dist-chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dist-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dist-label {
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.dist-meter-bg {
+    width: 100%;
+    height: 8px;
+    background: rgba(0,0,0,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.light-theme .dist-meter-bg {
+    background: rgba(0,0,0,0.05);
+}
+
+.dist-meter-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.gradient-purple {
+    background: linear-gradient(90deg, #8B5CF6, #A78BFA);
+}
+
+.gradient-cyan {
+    background: linear-gradient(90deg, #06B6D4, #22D3EE);
+}
+
+.gradient-pink {
+    background: linear-gradient(90deg, #EC4899, #F472B6);
+}
+
+/* Activity Logs Section */
+.activity-log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.log-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.log-item:last-child {
+    border-bottom: none;
+}
+
+.log-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.log-dot.green {
+    background: var(--active-green);
+    box-shadow: 0 0 8px var(--active-green);
+}
+
+.log-dot.purple {
+    background: var(--accent-primary);
+    box-shadow: 0 0 8px var(--accent-primary);
+}
+
+.log-dot.cyan {
+    background: var(--accent-secondary);
+    box-shadow: 0 0 8px var(--accent-secondary);
+}
+
+.log-dot.pink {
+    background: var(--accent-pink);
+    box-shadow: 0 0 8px var(--accent-pink);
+}
+
+.log-desc {
+    flex-grow: 1;
+}
+
+.log-desc strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.log-time {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+    .col-span-2, .col-span-3 {
+        grid-column: span 1;
+    }
+    .bar-chart-container {
+        height: 180px;
+    }
+    .chart-bar-wrapper {
+        width: 24px;
+    }
+}
