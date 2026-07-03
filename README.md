@@ -30,8 +30,13 @@
    ```bash
    git clone https://github.com/technopradyumn/-lumina-social-media-application.git
    ```
-2. Navigate into the directory and launch a static server:
-   ```bash
-   python -m http.server 8000
-   ```
+2. Navigate into the directory and launch a local web server (needed for ES Module imports to resolve without CORS blocks):
+   * **Using Node.js (Recommended)**:
+     ```bash
+     npx serve
+     ```
+   * **Using Python**:
+     ```bash
+     python -m http.server 8000
+     ```
 3. Open `http://localhost:8000` in your web browser.
